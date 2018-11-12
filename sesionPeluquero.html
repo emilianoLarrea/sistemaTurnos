@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Peluquería DiLorenzo-Sesión Peluquero</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="js/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css" />
+    <link href="js/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <!-- Barra Superior -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+
+
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand" id="inicio">Peluquería DiLorenzo</div>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+
+                <button class="btn btn-primary btn-lg navbar-right" id="misDatos">Mis Datos</button>
+                <button class="btn btn-primary btn-lg navbar-right" id="cerrarSesionCliente">Cerrar Sesión</button>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Titulo -->
+    <div class="jumbotron">
+        <div class="container">
+            <br>
+            <h1>Peluquería DiLorenzo</h1>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active" id="btnTurno"><a id="turnoCliente" href="#">Turno</a></li>
+                <li id="btnMisTurnos"><a id="misTurnosCliente" href="#">Mis Turnos</a></li>
+                <li id="btnMisDatos"><a id="misDatosCliente" href="#">Mis Datos</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- Gestión de Turnos -->
+    <div class="tab-pane" id="registroTurnoCliente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <!-- Calendario Selección Cliente -->
+        <div class="container">
+            <div class="row">
+                <div class='col-sm-6'>
+                    <div class="form-group">
+                        <div class='input-group date' id='calendarioSeleccionCliente'>
+                            <input type='text' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-3'><select class='form-control' id='selectPeluquero'>
+                        <option>Seleccione Peluquero</option>
+                    </select></div>
+                <button class="btn btn-primary btn-lg" id="btnBuscarTurno">Buscar</button>
+                
+            </div>
+
+        </div>
+    </div>
+    <!-- Turnos Pendientes -->
+    <div class="tab-pane" id="turnosCliente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <h1>Mis Turnos</h1>
+    </div>
+    <!-- Mis Datos -->
+    <div class="tab-pane" id="datosCliente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <h1>Mis Datos</h1>
+    </div>
+
+
+    <!-- Librerias -->
+    <script src="js/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery/md5.js" type="text/javascript"></script>
+    <script src="js/bower_components/moment/min/moment.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap/js/bootstrapValidator.min.js" type="text/javascript"></script>
+    <script src="js/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="js/funcionesGeneral.js" type="text/javascript"></script>
+    <script src="js/funcionesCliente.js" type="text/javascript"></script>
+</body>
+
+</html>
