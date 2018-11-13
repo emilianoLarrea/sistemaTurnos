@@ -8,7 +8,7 @@ class ConexionDB {
     
     //Se establece la conexion con la base de datos
     public function __construct() {        
-        $this->_conexion = new PDO("mysql:dbname=prueba4;host=localhost:8889", $this->_usuario, $this->_clave);
+        $this->_conexion = new PDO("mysql:dbname=prueba4;host=localhost", $this->_usuario, $this->_clave);
         $this->_conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 

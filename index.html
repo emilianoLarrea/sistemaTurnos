@@ -24,64 +24,146 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Courgette"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <!-- Barra Superior -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button
-            type="button"
-            class="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#navbar"
-            aria-controls="navbar"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span> <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="navbar-brand">Peluquería DiLorenzo</div>
+  <body class="sans">
+    <div class="contenedorFoto">
+      <!-- Barra Superior -->
+      <nav id="barra" class="navbar navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#navbar"
+              aria-controls="navbar"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span> <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand courgette">Peluquería DiLorenzo</div>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <button class="btn btn-lg navbar-right sans" id="login">
+              LOGIN
+            </button>
+          </div>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <button class="btn btn-primary btn-lg navbar-right" id="login">
-            LOGIN
-          </button>
+      </nav>
+
+      <!-- Titulo -->
+      <div id="tituloPrincipal">
+        <div class="container">
+          <h1 class="montserrat">Peluquería DiLorenzo</h1>
         </div>
       </div>
-    </nav>
 
-    <!-- Titulo -->
-    <div class="jumbotron">
-      <div class="container">
-        <br />
-        <h1>Peluquería DiLorenzo</h1>
+      <!-- Modal Inicio Sesión -->
+      <div
+        class="modal fade"
+        id="modalCliente"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form
+              id="formUsuario"
+              class="form-horizontal"
+              data-bv-message="Este valor No es válido"
+              data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+              data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+              data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
+              data-bv-submitbuttons="button[type=&quot;submit&quot;]"
+              data-bv-trigger="focus blur"
+              data-bv-live="enabled"
+            >
+              <!-- Titulo Modal -->
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-hidden="true"
+                >
+                  &times;
+                </button>
+                <h4 class="modal-title" id="tituloModal">Iniciar Sesión:</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label class="col-lg-10">Usuario:</label>
+                  <div class="col-lg-10">
+                    <input
+                      type="text"
+                      placeholder="Usuario"
+                      class="form-control"
+                      name="txtUsuario"
+                      id="txtUsuario"
+                      data-bv-notempty="true"
+                      data-bv-notempty-message="Escribí tu Usuario"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-lg-10">Contraseña</label>
+                  <div class="col-lg-10">
+                    <input
+                      type="password"
+                      placeholder="Contraseña"
+                      class="form-control"
+                      name="txtClave"
+                      id="txtClave"
+                      data-bv-notempty="true"
+                      data-bv-notempty-message="Escribí tu Contraseña"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Botones Modal -->
+              <div class="modal-footer">
+                <a class="btn btn-link btn-main" id="registroUsuario"
+                  >Regístrate aquí</a
+                >
+                <button
+                  type="button"
+                  id="loginUsuario"
+                  class="btn btn-primary"
+                  disabled
+                >
+                  LOGIN
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- Modal Inicio Sesión -->
-    <div
-      class="modal fade"
-      id="modalCliente"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form
-            id="formUsuario"
-            class="form-horizontal"
-            data-bv-message="Este valor No es válido"
-            data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
-            data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
-            data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
-            data-bv-submitbuttons="button[type=&quot;submit&quot;]"
-            data-bv-trigger="focus blur"
-            data-bv-live="enabled"
-          >
-            <!-- Titulo Modal -->
+      <!-- Modal Inicio Sesión -->
+      <div
+        class="modal fade"
+        id="modalAgregarUsuario"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
             <div class="modal-header">
               <button
                 type="button"
@@ -91,240 +173,170 @@
               >
                 &times;
               </button>
-              <h4 class="modal-title" id="tituloModal">Iniciar Sesión:</h4>
+              <h4 class="modal-title" id="tituloModal">Nuevo Usuario:</h4>
             </div>
+
+            <!-- Modal Body -->
             <div class="modal-body">
-              <div class="form-group">
-                <label class="col-lg-10">Usuario:</label>
-                <div class="col-lg-10">
-                  <input
-                    type="text"
-                    placeholder="Usuario"
-                    class="form-control"
-                    name="txtUsuario"
-                    id="txtUsuario"
-                    data-bv-notempty="true"
-                    data-bv-notempty-message="Escribí tu Usuario"
-                  />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="col-lg-10">Contraseña</label>
-                <div class="col-lg-10">
-                  <input
-                    type="password"
-                    placeholder="Contraseña"
-                    class="form-control"
-                    name="txtClave"
-                    id="txtClave"
-                    data-bv-notempty="true"
-                    data-bv-notempty-message="Escribí tu Contraseña"
-                  />
-                </div>
-              </div>
-            </div>
-            <!-- Botones Modal -->
-            <div class="modal-footer">
-              <a class="btn btn-link btn-main" id="registroUsuario"
-                >Regístrate aquí</a
-              >
-              <button
-                type="button"
-                id="loginUsuario"
-                class="btn btn-primary"
-                disabled
-              >
-                LOGIN
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Inicio Sesión -->
-    <div
-      class="modal fade"
-      id="modalAgregarUsuario"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-hidden="true"
-            >
-              &times;
-            </button>
-            <h4 class="modal-title" id="tituloModal">Nuevo Usuario:</h4>
-          </div>
-
-          <!-- Modal Body -->
-          <div class="modal-body">
-            <form class="form-horizontal" id="formCliente">
-              <div class="form-group form-group-sm">
-                <!-- left column -->
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label for="nombreUsuario" class="col-lg-10">Nombre</label>
-                    <div class="col-sm-12">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="nombreUsuario"
-                        placeholder="Nombre"
-                        name="nombreUsuario"
-                      />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="apellidoUsuario" class="col-lg-10"
-                      >Apellido</label
-                    >
-                    <div class="col-sm-12">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="apellidoUsuario"
-                        placeholder="Apellido"
-                        name="apellido"
-                      />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="mailUsuario" class="col-lg-10">Mail</label>
-                    <div class="col-sm-12">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="mailUsuario"
-                        placeholder="Mail"
-                        name="mail"
-                      />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="fechaNacimientoUsuario" class="col-lg-10"
-                      >Fecha de Nacimiento</label
-                    >
-                    <div class="col-sm-12">
-                      <div
-                        class="input-group date"
-                        id="calendarioFechaNacimiento"
+              <form class="form-horizontal" id="formCliente">
+                <div class="form-group form-group-sm">
+                  <!-- left column -->
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="nombreUsuario" class="col-lg-10"
+                        >Nombre</label
                       >
+                      <div class="col-sm-12">
                         <input
                           type="text"
                           class="form-control"
-                          name="fechaNacimiento"
+                          id="nombreUsuario"
+                          placeholder="Nombre"
+                          name="nombreUsuario"
                         />
-                        <span class="input-group-addon">
-                          <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="apellidoUsuario" class="col-lg-10"
+                        >Apellido</label
+                      >
+                      <div class="col-sm-12">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="apellidoUsuario"
+                          placeholder="Apellido"
+                          name="apellido"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="mailUsuario" class="col-lg-10">Mail</label>
+                      <div class="col-sm-12">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="mailUsuario"
+                          placeholder="Mail"
+                          name="mail"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="fechaNacimientoUsuario" class="col-lg-10"
+                        >Fecha de Nacimiento</label
+                      >
+                      <div class="col-sm-12">
+                        <div
+                          class="input-group date"
+                          id="calendarioFechaNacimiento"
+                        >
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="fechaNacimiento"
+                          />
+                          <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <!-- right column -->
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label for="celularUsuario" class="col-lg-10"
-                      >Celular</label
-                    >
-                    <div class="col-sm-12">
-                      <input
-                        type="text"
-                        required
-                        class="form-control"
-                        id="celularUsuario"
-                        name="tel"
-                        placeholder="Celular"
-                      />
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="sexoUsuario" class="col-lg-10">Sexo</label>
-                    <div class="col-sm-12">
-                      <select
-                        class="form-control"
-                        id="sexoUsuario"
-                        name="sexoUsuario"
+                  <!-- right column -->
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="celularUsuario" class="col-lg-10"
+                        >Celular</label
                       >
-                        <option value="">Seleccionar</option>
-                        <option value="femenino">Femenino</option>
-                        <option value="masculino">Masculino</option>
-                      </select>
+                      <div class="col-sm-12">
+                        <input
+                          type="text"
+                          required
+                          class="form-control"
+                          id="celularUsuario"
+                          name="tel"
+                          placeholder="Celular"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-lg-10">Contraseña</label>
-                    <div class="col-sm-12">
-                      <input
-                        type="password"
-                        placeholder="Contraseña"
-                        class="form-control"
-                        id="password"
-                        data-bv-notempty="true"
-                        data-bv-notempty-message="Escribí tu Contraseña"
-                      />
+                    <div class="form-group">
+                      <label for="sexoUsuario" class="col-lg-10">Sexo</label>
+                      <div class="col-sm-12">
+                        <select
+                          class="form-control"
+                          id="sexoUsuario"
+                          name="sexoUsuario"
+                        >
+                          <option value="">Seleccionar</option>
+                          <option value="femenino">Femenino</option>
+                          <option value="masculino">Masculino</option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-lg-10">Repetir Contraseña</label>
-                    <div class="col-sm-12">
-                      <div class="input-group" id="rePass">
+                    <div class="form-group">
+                      <label class="col-lg-10">Contraseña</label>
+                      <div class="col-sm-12">
                         <input
                           type="password"
-                          placeholder="Repetir Contraseña"
+                          placeholder="Contraseña"
                           class="form-control"
-                          id="rePassword"
+                          id="password"
                           data-bv-notempty="true"
-                          data-bv-notempty-message="Repetí tu Contraseña"
+                          data-bv-notempty-message="Escribí tu Contraseña"
                         />
-                        <span class="input-group-addon">
-                          <span id="error2" class="glyphicon"></span>
-                        </span>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-lg-10">Repetir Contraseña</label>
+                      <div class="col-sm-12">
+                        <div class="input-group" id="rePass">
+                          <input
+                            type="password"
+                            placeholder="Repetir Contraseña"
+                            class="form-control"
+                            id="rePassword"
+                            data-bv-notempty="true"
+                            data-bv-notempty-message="Repetí tu Contraseña"
+                          />
+                          <span class="input-group-addon">
+                            <span id="error2" class="glyphicon"></span>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <input hidden id="comprobarPass" type="number" value="0" />
                 </div>
-                <input hidden id="comprobarPass" type="number" value="0" />
-              </div>
 
-              <!-- Modal Footer -->
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-default"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  id="registroUsuarioGuardar"
-                >
-                  Guardar
-                </button>
-              </div>
-              <!-- End Modal Footer -->
-            </form>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-default"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="registroUsuarioGuardar"
+                  >
+                    Guardar
+                  </button>
+                </div>
+                <!-- End Modal Footer -->
+              </form>
+            </div>
+            <!-- End modal body div -->
           </div>
-          <!-- End modal body div -->
+          <!-- End modal content div -->
         </div>
-        <!-- End modal content div -->
+        <!-- End modal dialog div -->
       </div>
-      <!-- End modal dialog div -->
+      <!-- End modal div -->
     </div>
-    <!-- End modal div -->
     <!-- Librerias -->
     <script src="js/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script
