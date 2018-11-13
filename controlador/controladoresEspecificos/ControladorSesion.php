@@ -5,11 +5,13 @@ require_once '../persistencia/ControladorPersistencia.php';
 class ControladorSesion implements DbSentencias {
 
     private $usuario;
+    private $tipo;
     private $refControladorPersistencia;
 
     public function __construct() {
         session_start();
         $this->usuario = 'usuario';
+        $this->tipo = 'tipo';
         $this->refControladorPersistencia = ControladorPersistencia::obtenerCP();
     }
 
@@ -24,12 +26,17 @@ class ControladorSesion implements DbSentencias {
         //Si existe
         if ($registro) {
             $_SESSION[$this->usuario]=$datos['u'];
-             if ($registro['tipoUsuario'] == "cliente"){
-                    echo 0;}else if ($registro['tipoUsuario'] == "secretario"){
-                        echo 3;}else if ($registro['tipoUsuario'] == "peluquero"){
+            $_SESSION[$this->tipo] = $registro['tipoUsuario'];
+             if ($registro['tipoUsuario'] == "Cliente"){
+                    
+                    echo 0;}
+                else if ($registro['tipoUsuario'] == "Secretario"){
+                        echo 3;}
+                    else if ($registro['tipoUsuario'] == "Peluquero"){
                         echo 4;}
                 
-            } else {
+            } 
+        else {
                 //La contraseña es incorrecta
                 echo 1;
             }
@@ -45,10 +52,10 @@ class ControladorSesion implements DbSentencias {
     }
 
     //Se verifica que haya una sesion abierta
-    public function verificar() {
+    public function verificar($t) {
         if (!isset($_SESSION[$this->usuario])) {
             return false;
-        }else{
+        }else if (($_SESSION[$this->tipo]==$t)){
             return true;
         }
     }

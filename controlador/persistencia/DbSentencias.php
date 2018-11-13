@@ -9,8 +9,20 @@ const BUSCAR_PELUQUERO = "SELECT * FROM `usuario` WHERE `tipoUsuario` = 'Peluque
 
 
 
-//Alumno
-const INSERTAR_CLIENTE = "INSERT INTO `usuario`(`id`, `nombreUsuario`, `apellido`,`mail`, `fechaNacimiento`,`tel`,`sexo`, `pass`, `dni`,   `tipoUsuario`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, 0, 'cliente')";
+//Cliente
+const INSERTAR_CLIENTE = "INSERT INTO `usuario`(`id`, `nombreUsuario`, `apellido`,`mail`, `fechaNacimiento`,`tel`,`sexo`, `pass`, `dni`,   `tipoUsuario`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, 0, 'Cliente')";
+
+
+
+
+
+
+
+
+
+
+
+
 const ELIMINAR_ALUMNO = "DELETE FROM `persona2` WHERE id_persona = ? AND estado = 'A'";
 const ACTUALIZAR_ALUMNO = "UPDATE `persona2` SET `nombre`= ?,`apellido`= ?, `legajo`= ? WHERE id_persona = ? AND estado = 'A'";
 const BUSCAR_ALUMNO = "SELECT `persona2`.*, `domicilio`.* FROM `usobackend`.`persona2` 

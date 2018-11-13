@@ -27,8 +27,8 @@ if(isset($_GET['bool'])){
         echo json_encode(true);
     }
 }else{
-    
-    if ($sesion->verificar()) {
+    $tipo = $_GET['tipo'];
+    if ($sesion->verificar($tipo)) {
     
     //Si se envio un formulario
     if (isset($_GET['Formulario'])) {
