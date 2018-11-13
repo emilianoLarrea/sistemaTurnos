@@ -117,3 +117,7 @@ footer ul a:hover {
     font-size: 40px;
   }
 }
+
+.navbar-header .icon-bar {
+  background-color:#b17b17;
+}
