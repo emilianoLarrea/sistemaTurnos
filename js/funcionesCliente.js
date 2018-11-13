@@ -13,7 +13,7 @@ $(function () {
             compartirFunciones(app);
             //Se verifica que haya una sesion iniciada
             
-            app.comprobarSesion('cliente');
+            app.comprobarSesion('Cliente');
             //Encender calendario
             app.calendario('Cliente');
             //Se cargan los datos de todos los alumnos         

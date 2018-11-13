@@ -19,7 +19,7 @@ class ControladorSesion implements DbSentencias {
     public function iniciar($datos) {
         
         //Se verifica que el usuario exista
-        $parametros = array("mail" =>  base64_decode(base64_decode($datos['u']))/*, "pass" => base64_decode($datos['c'])*/);
+        $parametros = array("mail" =>  base64_decode(base64_decode($datos['u'])), "pass" =>  $datos['c'] );
         $resultado = $this->refControladorPersistencia->ejecutarSentencia(DbSentencias::BUSCAR_USUARIO, $parametros);
         $registro = $resultado->fetch();
         

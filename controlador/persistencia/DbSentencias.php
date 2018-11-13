@@ -3,7 +3,7 @@
 interface DbSentencias {
     
 //Sesion
-const BUSCAR_USUARIO = "SELECT * FROM usuario WHERE mail = ?"/* AND pass = ?"*/;    
+const BUSCAR_USUARIO = "SELECT * FROM `usuario` WHERE `mail` = ?  AND `pass` = ?";    
 const BUSCAR_PELUQUERO = "SELECT * FROM `usuario` WHERE `tipoUsuario` = 'Peluquero'";    
 
 
