@@ -182,7 +182,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `pass`, `nombreUsuario`, `apellido`, `fechaNacimiento`, `sexo`, `dni`, `mail`, `tel`, `tipoUsuario`) VALUES
-(1, '202cb962ac59075b964b07152d234b70', 'Walter', 'Prueba', '0000-00-00', 'Hombre', 39653153, 'admin', '2644804290', 'peluquero');
+(1, '202cb962ac59075b964b07152d234b70', 'Walter', 'Prueba', '0000-00-00', 'Hombre', 39653153, 'admin', '2644804290', 'Peluquero');
 
 --
 -- Índices para tablas volcadas

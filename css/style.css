@@ -93,6 +93,7 @@ footer ul a i {
   padding: 6px;
   background-color: #b17b17;
   border-radius: 50%;
+  transition: all 0.5s;
 }
 footer ul a:nth-child(2) i {
   padding: 6px 9px;
@@ -119,5 +120,5 @@ footer ul a:hover {
 }
 
 .navbar-header .icon-bar {
-  background-color:#b17b17;
+  background-color: #b17b17;
 }
