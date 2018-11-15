@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 12-11-2018 a las 22:47:09
+-- Tiempo de generación: 15-11-2018 a las 20:55:35
 -- Versión del servidor: 5.6.38
 -- Versión de PHP: 7.2.1
 
@@ -166,7 +166,7 @@ CREATE TABLE `Turno` (
 
 CREATE TABLE `usuario` (
   `id` int(40) NOT NULL,
-  `pass` varchar(40) NOT NULL,
+  `pass` varchar(45) NOT NULL,
   `nombreUsuario` varchar(40) NOT NULL,
   `apellido` varchar(40) NOT NULL,
   `fechaNacimiento` date NOT NULL,
@@ -182,7 +182,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `pass`, `nombreUsuario`, `apellido`, `fechaNacimiento`, `sexo`, `dni`, `mail`, `tel`, `tipoUsuario`) VALUES
-(1, '202cb962ac59075b964b07152d234b70', 'Walter', 'Prueba', '0000-00-00', 'Hombre', 39653153, 'admin', '2644804290', 'Peluquero');
+(1, '202cb962ac59075b964b07152d234b70', 'Walter', 'Prueba', '0000-00-00', 'Hombre', 39653153, 'admin', '2644804290', 'Peluquero'),
+(3, 'NmEyMDRiZDg5ZjNjODM0OGFmZDVjNzdjNzE3YTA5N2E=', 'Emiliano', 'Larrea', '2018-10-24', 'masculino', 0, 'emiliano18796@gmail.com', '0264154804290', 'Cliente'),
+(4, 'NmEyMDRiZDg5ZjNjODM0OGFmZDVjNzdjNzE3YTA5N2E=', 'Claudio', 'Larrea', '2018-10-02', 'masculino', 0, 'claudio', '02644804290', 'Cliente'),
+(5, 'MWQ0YzcyYzRmZGUyZWM3NTE2OGI2NWIzMWUwNzhlMGI=', 'Claudio', 'Larrea', '2018-11-14', 'masculino', 0, 'claudio@gmail.com', '02644804290', 'Cliente'),
+(6, 'MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=', 'Daniel', 'Di Lorenzo', '2018-11-13', 'masculino', 0, 'admin', '12345678', 'Peluquero');
 
 --
 -- Índices para tablas volcadas
@@ -267,7 +271,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
