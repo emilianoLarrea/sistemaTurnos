@@ -105,6 +105,9 @@ footer ul a:hover i {
 footer ul a:hover {
   color: rgb(233, 233, 233);
 }
+footer ul a:visited {
+  color: rgb(233, 233, 233);
+}
 @media (max-width: 680px) {
   .contenedorFoto {
     background-position-x: 50%;
