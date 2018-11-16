@@ -93,7 +93,7 @@ footer ul a i {
   padding: 6px;
   background-color: #b17b17;
   border-radius: 50%;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 footer ul a:nth-child(2) i {
   padding: 6px 9px;
