@@ -22,7 +22,7 @@ function compartirFunciones(app) {
         }
       },
       error: function() {
-        alert("Hubo un error al combrobar la sesion");
+        alert("Hubo un error al comprobar la sesión");
         window.location = "index.html";
       }
     });
