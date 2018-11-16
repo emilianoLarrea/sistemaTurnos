@@ -1,0 +1,57 @@
+.montserrat {
+  font-family: "Montserrat";
+}
+.sans {
+  font-family: "Source Sans Pro";
+}
+.courgette {
+  font-family: "Courgette";
+}
+#navBarPrincipal {
+  border-bottom: 1px solid rgba(169, 169, 169, 0.4);
+  margin: 10px 30px;
+  box-shadow: 2px 5px 10px rgba(169, 169, 169, 0.4);
+}
+#misDatos,
+#cerrarSesionCliente,
+#btnBuscarTurno {
+  background-color: #b17b17;
+  color: rgb(233, 233, 233);
+  padding: 6px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+#tituloPrincipal {
+  margin-top: 6%;
+  margin-bottom: 3%;
+}
+#tituloPrincipal h1 {
+  font-size: 350%;
+}
+#navBarTurnos {
+  font-size: 110%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+}
+#navBarTurnosAdentro li {
+  box-shadow: 2px 5px 10px rgba(169, 169, 169, 0.4);
+  border-radius: 15%;
+  background: rgba(169, 169, 169, 0.1);
+}
+#navBarTurnosAdentro li a {
+  color: #976912;
+  transition: all 0.5s;
+}
+#navBarTurnosAdentro li a:hover {
+  background: #b17b17;
+  color: rgb(233, 233, 233);
+}
+#navBarTurnosAdentro li a:active {
+  background: #b17b17;
+  color: rgb(233, 233, 233);
+}
+.calendario {
+  margin-top: 9px;
+}
