@@ -21,7 +21,8 @@ function compartirFunciones(app) {
           window.location = "index.html";
         }
       },
-      error: function() {
+      error: function(cosa1, cosa2, error) {
+        alert(error);
         alert("Hubo un error al comprobar la sesión");
         window.location = "index.html";
       }
