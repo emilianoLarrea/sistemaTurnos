@@ -63,7 +63,6 @@ function compartirFunciones(app) {
       method: "POST",
       dataType: "json",
       success: function(data) {
-        
         app.agregarSelector(data, tipo);
       },
       error: function(data) {
@@ -110,7 +109,7 @@ function compartirFunciones(app) {
       app.buscar("Peluquero");
     });
     //oyente de mis datos en menú superior
-    $("#misDatos"+tipo).on('click', function(){
+    $("#misDatos" + tipo + "Nav").on("click", function() {
       $("#registroTurno" + tipo).hide();
       $("#turnos" + tipo).hide();
       $("#datos" + tipo).show();
