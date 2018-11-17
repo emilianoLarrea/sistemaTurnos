@@ -57,13 +57,13 @@ function compartirFunciones(app) {
   //buscar un peluquero o lo que sea que se necesite para armar un select:
   app.buscar = function(tipo) {
     var url =
-      "controlador/ruteador/Ruteador.php?accion=buscarPeluquero&Formulario=Cliente";
+      "controlador/ruteador/Ruteador.php?accion=buscarPeluquero&Formulario=Cliente&tipo=Cliente";
     $.ajax({
       url: url,
       method: "POST",
       dataType: "json",
       success: function(data) {
-        console.log(data);
+        
         app.agregarSelector(data, tipo);
       },
       error: function(data) {
@@ -108,6 +108,15 @@ function compartirFunciones(app) {
     //oyente de click en selector de pelquero
     $("#selectPeluquero").on("click", function() {
       app.buscar("Peluquero");
+    });
+    //oyente de mis datos en menú superior
+    $("#misDatos"+tipo).on('click', function(){
+      $("#registroTurno" + tipo).hide();
+      $("#turnos" + tipo).hide();
+      $("#datos" + tipo).show();
+      $("#btnMisTurnos").removeClass("active");
+      $("#btnTurno").removeClass("active");
+      $("#btnMisDatos").addClass("active");
     });
   };
 }

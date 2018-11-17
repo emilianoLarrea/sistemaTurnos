@@ -30,7 +30,7 @@ class ControladorCliente extends ControladorGeneral {
             $this->refControladorPersistencia->iniciarTransaccion();
             
             $resultado = $this->refControladorPersistencia->ejecutarSentencia(DbSentencias::BUSCAR_PELUQUERO);
-           $array = $resultado->fetchAll(PDO::FETCH_ASSOC);
+            $array = $resultado->fetchAll(PDO::FETCH_ASSOC);
             $this->refControladorPersistencia->confirmarTransaccion();
             return $array;
 

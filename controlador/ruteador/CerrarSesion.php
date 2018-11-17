@@ -5,6 +5,7 @@ require_once '../controladoresEspecificos/ControladorSesion.php';
 
 if(session_start()==TRUE){
 session_destroy();
+
 }
 
 
