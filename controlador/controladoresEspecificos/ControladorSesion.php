@@ -27,13 +27,13 @@ class ControladorSesion implements DbSentencias {
         if ($registro) {
             $_SESSION[$this->usuario]=$datos['u'];
             $_SESSION[$this->tipo] = $registro['tipoUsuario'];
-             if ($registro['tipoUsuario'] == "Cliente"){
+             if ($registro['tipoUsuario'] == "Peluquero"){
                     
-                    echo 0;}
+                    echo 4;}
                 else if ($registro['tipoUsuario'] == "Secretario"){
                         echo 3;}
-                    else if ($registro['tipoUsuario'] == "Peluquero"){
-                        echo 4;}
+                    else if ($registro['tipoUsuario'] == "Cliente"){
+                        echo 0;}
                 
             } 
         else {
