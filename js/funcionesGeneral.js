@@ -78,7 +78,7 @@ function compartirFunciones(app) {
     $("#datos" + tipo).hide();
     $("#turnos" + tipo).hide();
     //Oyente para cuando se hace click en el boton Agregar
-    $("#cerrarSesion" + tipo).on("click", function(event) {
+    $("#cerrarSesion").on("click", function(event) {
       app.cerrarSesion();
     });
     $("#misTurnosCliente").on("click", function(event) {
@@ -110,7 +110,7 @@ function compartirFunciones(app) {
       app.buscar("Peluquero");
     });
     //oyente de mis datos en menú superior
-    $("#misDatos"+tipo).on('click', function(){
+    $("#misDatos").on('click', function(){
       $("#registroTurno" + tipo).hide();
       $("#turnos" + tipo).hide();
       $("#datos" + tipo).show();

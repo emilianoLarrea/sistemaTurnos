@@ -4,8 +4,7 @@ $(function () {
     (function (app) {      
                     
         app.init = function () {
-            
-            
+                    
             
             
             
@@ -15,11 +14,11 @@ $(function () {
             
             app.comprobarSesion('Peluquero');
             //Encender calendario
-            app.calendario('Cliente');
+            app.calendario('Peluquero');
             //Se cargan los datos de todos los alumnos         
-            //app.cargarDataTable("Alumno");
+            
             //Se inicializan los oyentes para los eventos
-            app.oyentes("Cliente");
+            app.oyentes("Peluquero");
         };
 
         app.init();
