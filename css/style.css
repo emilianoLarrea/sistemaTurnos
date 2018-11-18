@@ -112,9 +112,11 @@ footer ul a:visited {
   .contenedorFoto {
     background-position-x: 50%;
   }
-  #login {
+  button#login {
     margin-top: 3%;
     margin-bottom: 2%;
+    background-color: black;
+    color: #b17b17;
   }
   .navbar-brand {
     font-size: 15px;

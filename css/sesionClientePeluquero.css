@@ -69,7 +69,13 @@
     margin: 0% 2%;
     margin-right: 10%;
   }
-
+  #misDatosClienteNav,
+  #misDatosPeluqueroNav,
+  #cerrarSesionCliente,
+  #cerrarSesionPeluquero {
+    background: white;
+    color: #976912;
+  }
   #tituloPrincipal {
     margin-top: 18%;
   }
