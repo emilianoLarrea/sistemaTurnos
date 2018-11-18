@@ -15,7 +15,6 @@ function compartirFunciones(app) {
     var url = "controlador/ruteador/Ruteador.php?tipo=" + tipo;
     $.ajax({
       url: url,
-      dataType: "json",
       success: function(data) {
         if (data == false) {
           window.location = "index.html";
@@ -78,7 +77,7 @@ function compartirFunciones(app) {
     $("#datos" + tipo).hide();
     $("#turnos" + tipo).hide();
     //Oyente para cuando se hace click en el boton Agregar
-    $("#cerrarSesion" + tipo).on("click", function(event) {
+    $("#cerrarSesion").on("click", function(event) {
       app.cerrarSesion();
     });
     $("#misTurnosCliente").on("click", function(event) {

@@ -87,28 +87,27 @@
       <div class="container-fluid">
         <ul class="nav navbar-nav" id="navBarTurnosAdentro">
           <li class="active" id="btnTurno">
-            <a id="turnoCliente" href="#">Turno</a>
+            <a id="turnoPeluquero" href="#">Turno</a>
           </li>
           <li id="btnMisTurnos">
-            <a id="misTurnosCliente" href="#">Mis Turnos</a>
+            <a id="misTurnosPeluquero" href="#">Mis Turnos</a>
           </li>
           <li id="btnMisDatos">
-            <a id="misDatosCliente" href="#">Mis Datos</a>
+            <a id="misDatosPeluquero" href="#">Mis Datos</a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <!-- Gestión de Turnos -->
     <div
       class="tab-pane"
-      id="registroTurnoCliente"
+      id="misTurnosPeluquero"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel"
       aria-hidden="true"
     >
-      <!-- Calendario Selección Cliente -->
+      <!-- Calendario Selección De Turnos del Día -->
       <div class="container sans">
         <div class="row">
           <div class="col-sm-6 calendario">
@@ -126,11 +125,11 @@
               <option>Seleccione Peluquero</option>
             </select>
           </div>
-          <button class="btn btn-lg" id="btnBuscarTurno">Buscar</button>
+          <button class="btn btn-lg sans" id="btnBuscarTurno">Buscar</button>
         </div>
       </div>
     </div>
-    <!-- Turnos Pendientes -->
+
     <div
       class="tab-pane"
       id="turnosCliente"
@@ -141,7 +140,6 @@
     >
       <h1>Mis Turnos</h1>
     </div>
-    <!-- Mis Datos -->
     <div
       class="tab-pane"
       id="datosCliente"

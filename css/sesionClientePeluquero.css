@@ -1,3 +1,6 @@
+.navbar-header .icon-bar {
+  background-color: #976912;
+}
 .montserrat {
   font-family: "Montserrat";
 }
@@ -11,6 +14,7 @@
   border-bottom: 1px solid rgba(169, 169, 169, 0.4);
   margin: 10px 30px;
   box-shadow: 2px 5px 10px rgba(169, 169, 169, 0.4);
+  background: rgb(255, 255, 255);
 }
 #misDatosClienteNav,
 #misDatosPeluqueroNav,
@@ -22,6 +26,7 @@
   padding: 6px;
   margin-left: 5px;
   margin-top: 5px;
+  margin-bottom: 10px;
 }
 #tituloPrincipal {
   margin-top: 6%;
@@ -49,6 +54,7 @@
 #navBarTurnosAdentro li a:hover {
   background: #b17b17;
   color: rgb(233, 233, 233);
+  border-radius: 15%;
 }
 #navBarTurnosAdentro li a:active {
   background: #b17b17;
@@ -56,4 +62,30 @@
 }
 .calendario {
   margin-top: 9px;
+}
+@media (max-width: 768px) {
+  #navbar {
+    border-top: 1px solid rgba(169, 169, 169, 0.4);
+    margin: 0% 2%;
+    margin-right: 10%;
+  }
+
+  #tituloPrincipal {
+    margin-top: 18%;
+  }
+  #tituloPrincipal h1 {
+    font-size: 270%;
+  }
+  #tituloPrincipal h4 {
+    font-size: 130%;
+  }
+  #navBarTurnos {
+    margin-top: 10%;
+  }
+  #navBarTurnosAdentro li {
+    margin-bottom: 8%;
+  }
+  #btnBuscarTurno {
+    margin: 5% 40%;
+  }
 }

@@ -16,8 +16,7 @@ $(function () {
             app.comprobarSesion('Cliente');
             //Encender calendario
             app.calendario('Cliente');
-            //Se cargan los datos de todos los alumnos         
-            //app.cargarDataTable("Alumno");
+           
             //Se inicializan los oyentes para los eventos
             app.oyentes("Cliente");
         };
