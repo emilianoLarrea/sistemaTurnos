@@ -39,7 +39,7 @@ $(function() {
 
     app.registroUsuario = function(tipo) {
       $("#modalCliente").modal("hide");
-
+      $("#tituloModal").html("Nuevo Usuario");
       $("#modalAgregarUsuario").modal({ show: true });
       $("#form" + tipo)[0].reset();
       app.calendario();
@@ -110,7 +110,9 @@ $(function() {
       $("#login").on("click", function(event) {
         app.modal("Cliente");
       });
-
+      $("#registrarse").on("click", function() {
+        app.registroUsuario("Cliente");
+      });
       $("#loginUsuario").on("click", function() {
         var datos =
           "u=" +
