@@ -3,7 +3,7 @@ require_once '../controladoresEspecificos/ControladorSesion.php';
 
 $sesion = new ControladorSesion();
 
-$_GET['sesion'];
+//$_GET['sesion'];
 $datosFormulario = $_POST; 
 if(isset($_GET['bool'])){
     if (isset($_GET['Formulario'])) {

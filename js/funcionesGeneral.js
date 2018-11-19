@@ -15,7 +15,7 @@ function compartirFunciones(app) {
     var url = "controlador/ruteador/Ruteador.php?tipo=" + tipo;
     $.ajax({
       url: url,
-      dataType: 'json',
+      dataType: "json",
       success: function(data) {
         if (data == false) {
           window.location = "index.html";
@@ -107,7 +107,7 @@ function compartirFunciones(app) {
       $("#btnTurno").removeClass("active");
       $("#btnMisDatos").addClass("active");
     });
-   
+
     //oyente de mis datos en menú superior
     $("#misDatos" + tipo + "Nav").on("click", function() {
       $("#registroTurno" + tipo).hide();

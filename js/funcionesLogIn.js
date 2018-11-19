@@ -83,7 +83,7 @@ $(function() {
         var url =
           "controlador/ruteador/Ruteador.php?accion=agregar&Formulario=" +
           tipo +
-          "&bool=hola";
+          "&bool=true";
         var datosEnviar =
           $("#form" + tipo).serialize() +
           "&pass=" +
