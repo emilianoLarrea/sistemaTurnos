@@ -74,6 +74,9 @@ function compartirFunciones(app) {
       }
     });
   };
+  //Funciones Nico
+
+  //Funciones Emi
 
   //Se activan los oyentes para todos los eventos
   app.oyentes = function(tipo) {
@@ -117,5 +120,8 @@ function compartirFunciones(app) {
       $("#btnTurno").removeClass("active");
       $("#btnMisDatos").addClass("active");
     });
+    //Oyentes Nico
+
+    //Oyentes Emi
   };
 }
