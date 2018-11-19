@@ -16,9 +16,14 @@ $(function () {
             app.comprobarSesion('Cliente');
             //Encender calendario
             app.calendario('Cliente');
-           
+
+            //Cargar los peluqueros disponibles
+            app.buscar("Peluquero");
+
             //Se inicializan los oyentes para los eventos
             app.oyentes("Cliente");
+
+            
         };
 
         app.init();

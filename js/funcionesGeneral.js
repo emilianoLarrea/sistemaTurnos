@@ -107,10 +107,7 @@ function compartirFunciones(app) {
       $("#btnTurno").removeClass("active");
       $("#btnMisDatos").addClass("active");
     });
-    //oyente de click en selector de pelquero
-    $("#selectPeluquero").on("click", function() {
-      app.buscar("Peluquero");
-    });
+   
     //oyente de mis datos en menú superior
     $("#misDatos" + tipo + "Nav").on("click", function() {
       $("#registroTurno" + tipo).hide();
