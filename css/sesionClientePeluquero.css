@@ -75,6 +75,8 @@
   #cerrarSesionPeluquero {
     background: white;
     color: #976912;
+    font-size: 120%;
+    display: block;
   }
   #tituloPrincipal {
     margin-top: 18%;
