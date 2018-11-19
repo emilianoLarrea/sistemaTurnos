@@ -15,6 +15,7 @@ function compartirFunciones(app) {
     var url = "controlador/ruteador/Ruteador.php?tipo=" + tipo;
     $.ajax({
       url: url,
+      dataType: 'json',
       success: function(data) {
         if (data == false) {
           window.location = "index.html";
@@ -57,14 +58,14 @@ function compartirFunciones(app) {
   //buscar un peluquero o lo que sea que se necesite para armar un select:
   app.buscar = function(tipo) {
     var url =
-      "controlador/ruteador/Ruteador.php?accion=buscarPeluquero&Formulario=Cliente&tipo=" +
-      tipo;
+      "controlador/ruteador/Ruteador.php?accion=buscarPeluquero&Formulario=Cliente&tipo=Cliente";
     $.ajax({
       url: url,
       method: "POST",
       dataType: "json",
       success: function(data) {
         app.agregarSelector(data, tipo);
+        console.log(data);
       },
       error: function(data, data1, error) {
         alert("Error en el Servidor");
