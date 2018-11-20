@@ -88,7 +88,19 @@
     font-size: 130%;
   }
   #navBarTurnos {
-    margin-top: 10%;
+    margin-top: 12%;
+  }
+  #navBarTurnosAdentro {
+    display: inline-block;
+  }
+  #navBarTurnosAdentro li:nth-child(1) {
+    float: left;
+  }
+  #navBarTurnosAdentro li:nth-child(2) {
+    float: right;
+  }
+  #navBarTurnosAdentro li:nth-child(3) {
+    float: right;
   }
   #navBarTurnosAdentro li {
     margin-bottom: 8%;
