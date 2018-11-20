@@ -86,7 +86,7 @@ function compartirFunciones(app) {
     $("#cerrarSesion" + tipo).on("click", function(event) {
       app.cerrarSesion();
     });
-    $("#misTurnosCliente").on("click", function(event) {
+    $("#misTurnos" + tipo).on("click", function(event) {
       $("#turnos" + tipo).show();
       $("#registroTurno" + tipo).hide();
       $("#datos" + tipo).hide();
@@ -94,7 +94,7 @@ function compartirFunciones(app) {
       $("#btnTurno").removeClass("active");
       $("#btnMisDatos").removeClass("active");
     });
-    $("#turnoCliente").on("click", function(event) {
+    $("#turno" + tipo).on("click", function(event) {
       $("#datos" + tipo).hide();
       $("#registroTurno" + tipo).show();
       $("#turnos" + tipo).hide();
@@ -102,7 +102,7 @@ function compartirFunciones(app) {
       $("#btnTurno").addClass("active");
       $("#btnMisDatos").removeClass("active");
     });
-    $("#btnMisDatos").on("click", function(event) {
+    $("#misDatos" + tipo).on("click", function(event) {
       $("#registroTurno" + tipo).hide();
       $("#turnos" + tipo).hide();
       $("#datos" + tipo).show();
