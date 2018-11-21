@@ -63,6 +63,9 @@
 .calendario {
   margin-top: 9px;
 }
+.contenedorCalendario {
+  margin-left: 20%;
+}
 @media (max-width: 768px) {
   #navbar {
     border-top: 1px solid rgba(169, 169, 169, 0.4);
@@ -107,5 +110,8 @@
   }
   #btnBuscarTurno {
     margin: 5% 40%;
+  }
+  .contenedorCalendario {
+    margin-left: 0%;
   }
 }
