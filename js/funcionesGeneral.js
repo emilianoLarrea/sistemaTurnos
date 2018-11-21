@@ -74,6 +74,43 @@ function compartirFunciones(app) {
       }
     });
   };
+  //Funciones para mostrar Mensaje de Bienvenida
+  app.buscarUsuarioLogeado = function(tipo) {
+    var url = "controlador/ruteador/RuteadorBienvenida.php?tipo=" + tipo;
+    $.ajax({
+      url: url,
+      method: "POST",
+      dataType: "json",
+      success: function(data) {
+        app.mostrarUsuarioLogeado(data, tipo);
+      },
+      error: function(a, b, e) {
+        console.log(e);
+      }
+    });
+  };
+  app.mostrarUsuarioLogeado = function(usuario, tipo) {
+    var url =
+      "controlador/ruteador/RuteadorGral.php?accion=buscarUsuarioLogeado&Formulario=Cliente&tipo=" +
+      tipo;
+    var datosEnviar = { mail: usuario };
+    $.ajax({
+      url: url,
+      method: "POST",
+      data: datosEnviar,
+      dataType: "json",
+      success: function(data) {
+        $.each(data, function(i, usuario) {
+          $("#tituloBienvenida" + tipo).html(
+            "Bienvenido " + usuario.nombreUsuario
+          );
+        });
+      },
+      error: function(a, b, e) {
+        console.log(e);
+      }
+    });
+  };
   //Funciones Nico
 
   //Funciones Emi

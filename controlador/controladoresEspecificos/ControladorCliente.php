@@ -123,4 +123,16 @@ class ControladorCliente extends ControladorGeneral {
         
     }
 
+    public function buscarUsuarioLogeado($datos) {
+        try{
+            $this->refControladorPersistencia->iniciarTransaccion();
+            $parametros = array("mail" => $datos['mail']);
+            $resultado = $this->refControladorPersistencia->ejecutarSentencia(DbSentencias::BUSCAR_USUARIO_LOGEADO, $parametros);
+            $array = $resultado->fetchAll(PDO::FETCH_ASSOC);
+            $this->refControladorPersistencia->confirmarTransaccion();
+            return $array;
+        }catch (Exception $e) {
+            echo "Failed: " . $e->getMessage();
+        }
+    }
 }

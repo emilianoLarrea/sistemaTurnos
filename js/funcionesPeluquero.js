@@ -1,27 +1,23 @@
-$(function () {
-    var FuncionesCliente = {};
+$(function() {
+  var FuncionesCliente = {};
 
-    (function (app) {      
-                    
-        app.init = function () {
-                    
-            
-            
-            
-            //Se comparten todas las funciones del archivo funcionesGeneral con la app
-            compartirFunciones(app);
-            //Se verifica que haya una sesion iniciada
-            
-            app.comprobarSesion('Peluquero');
-            //Encender calendario
-            app.calendario('Peluquero');
-            //Se cargan los datos de todos los alumnos         
-            
-            //Se inicializan los oyentes para los eventos
-            app.oyentes("Peluquero");
-        };
+  (function(app) {
+    app.init = function() {
+      //Se comparten todas las funciones del archivo funcionesGeneral con la app
+      compartirFunciones(app);
+      //Se verifica que haya una sesion iniciada
 
-        app.init();
+      app.comprobarSesion("Peluquero");
+      //Cargar mensaje bienvenida
+      app.buscarUsuarioLogeado("Peluquero");
+      //Encender calendario
+      app.calendario("Peluquero");
+      //Se cargan los datos de todos los alumnos
 
-    })(FuncionesCliente);    
+      //Se inicializan los oyentes para los eventos
+      app.oyentes("Peluquero");
+    };
+
+    app.init();
+  })(FuncionesCliente);
 });

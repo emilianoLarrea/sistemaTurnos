@@ -10,7 +10,8 @@ $(function() {
       app.comprobarSesion("Cliente");
       //Encender calendario
       app.calendario("Cliente");
-
+      //Cargar mensaje bienvenida
+      app.buscarUsuarioLogeado("Cliente");
       //Cargar los peluqueros disponibles
       app.buscar("Peluquero");
 

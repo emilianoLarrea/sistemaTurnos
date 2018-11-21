@@ -61,7 +61,7 @@ class ControladorSesion implements DbSentencias {
     }
     
     public function getUsuario() {
-        return $this->usuario;
+        return $_SESSION[$this->usuario];
     }
 
     public function getRefControladorPersistencia() {
