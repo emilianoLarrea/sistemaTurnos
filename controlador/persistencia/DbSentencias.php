@@ -4,16 +4,20 @@ interface DbSentencias {
     
 //Sesion
 const BUSCAR_USUARIO = "SELECT * FROM `usuario` WHERE `mail` = ?  AND `pass` = ?";    
-const BUSCAR_PELUQUERO = "SELECT * FROM `usuario` WHERE `tipoUsuario` = 'Peluquero';";    
-const BUSCAR_USUARIO_LOGEADO = "SELECT `nombreUsuario` FROM `usuario` WHERE `mail` = ?";
+  
+
+//Peluquero
 const CREAR_LISTA = "INSERT INTO `listaTurnoPeluquero`(`idListaTurno`, `nombreLista`, `fechaDesde`, `idUsuario`, `estado`) VALUES (?,?,?,?,0);";
 const BUSCAR_IDUSUARIO = "SELECT `id` FROM `usuario` WHERE `mail` = ?;";
 const BUSCAR_IDLISTA = "SELECT MAX(`idListaTurno`) FROM `listaTurnoPeluquero`";
+const BUSCAR_IDPARAMETRO_TURNO = "SELECT MAX(`idParametroTurno`) FROM `parametroTurno`;";
+const CREAR_PARAMETROTURNO = "INSERT INTO `parametroTurno`(`idParametroTurno`, `horaDesde`, `horaHasta`, `idListaTurno`,`idDia`) VALUES (?,?,?,?,?);";
+const TURNOS_EXISTENTES_EN_ESE_HORARIO = "SELECT `idParametroTurno` FROM `parametroTurno` WHERE (((`horaDesde`= ?)AND(`horaHasta`= ?))OR((`horaDesde`> ?)AND(`horaDesde`< ?))OR((`horaHasta`> ?)AND(`horaHasta`< ?))OR((`horaDesde`= ?))OR((`horaHasta`= ?)))AND((`idDia` = ?)AND(`idListaTurno`=?))";
 
 //Cliente
 const INSERTAR_CLIENTE = "INSERT INTO `usuario`(`id`, `nombreUsuario`, `apellido`,`mail`, `fechaNacimiento`,`tel`,`sexo`, `pass`, `dni`,   `tipoUsuario`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, 0, 'Cliente')";
-
-
+const BUSCAR_USUARIO_LOGEADO = "SELECT `nombreUsuario` FROM `usuario` WHERE `mail` = ?";
+const BUSCAR_PELUQUERO = "SELECT * FROM `usuario` WHERE `tipoUsuario` = 'Peluquero';";  
 
 
 

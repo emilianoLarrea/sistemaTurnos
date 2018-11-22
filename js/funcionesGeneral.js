@@ -1,27 +1,27 @@
 function compartirFunciones(app) {
-  app.cerrarSesion = function() {
+  app.cerrarSesion = function () {
     var url = "controlador/ruteador/CerrarSesion.php";
     $.ajax({
       url: url,
       dataType: "json",
-      success: function() {},
-      error: function() {}
+      success: function () { },
+      error: function () { }
     });
     window.location = "index.html";
   };
 
   //Se comprueba que haya una session activa
-  app.comprobarSesion = function(tipo) {
+  app.comprobarSesion = function (tipo) {
     var url = "controlador/ruteador/Ruteador.php?tipo=" + tipo;
     $.ajax({
       url: url,
       dataType: "json",
-      success: function(data) {
+      success: function (data) {
         if (data == false) {
           window.location = "index.html";
         }
       },
-      error: function(cosa1, cosa2, error) {
+      error: function (cosa1, cosa2, error) {
         alert(error);
         alert("Hubo un error al comprobar la sesión");
         window.location = "index.html";
@@ -30,17 +30,17 @@ function compartirFunciones(app) {
   };
 
   //Encender Calendario de selección:
-  app.calendario = function(tipo) {
-    $(function() {
+  app.calendario = function (tipo) {
+    $(function () {
       $("#calendarioSeleccion" + tipo).datetimepicker({
         format: "DD/MM/YYYY"
       });
     });
   };
 
-  app.agregarSelector = function(data, tipo) {
+  app.agregarSelector = function (data, tipo) {
     var lineas = "<option>Seleccione " + tipo + "</option>";
-    $.each(data, function(index, data) {
+    $.each(data, function (index, data) {
       lineas =
         lineas +
         "<option value='" +
@@ -56,18 +56,18 @@ function compartirFunciones(app) {
   };
 
   //buscar un peluquero o lo que sea que se necesite para armar un select:
-  app.buscar = function(tipo) {
+  app.buscar = function (tipo) {
     var url =
       "controlador/ruteador/Ruteador.php?accion=buscarPeluquero&Formulario=Cliente&tipo=Cliente";
     $.ajax({
       url: url,
       method: "POST",
       dataType: "json",
-      success: function(data) {
+      success: function (data) {
         app.agregarSelector(data, tipo);
         console.log(data);
       },
-      error: function(data, data1, error) {
+      error: function (data, data1, error) {
         alert("Error en el Servidor");
         console.log(data);
         console.log(error);
@@ -75,21 +75,21 @@ function compartirFunciones(app) {
     });
   };
   //Funciones para mostrar Mensaje de Bienvenida
-  app.buscarUsuarioLogeado = function(tipo) {
+  app.buscarUsuarioLogeado = function (tipo) {
     var url = "controlador/ruteador/RuteadorBienvenida.php?tipo=" + tipo;
     $.ajax({
       url: url,
       method: "POST",
       dataType: "json",
-      success: function(data) {
+      success: function (data) {
         app.mostrarUsuarioLogeado(data, tipo);
       },
-      error: function(a, b, e) {
+      error: function (a, b, e) {
         console.log(e);
       }
     });
   };
-  app.mostrarUsuarioLogeado = function(usuario, tipo) {
+  app.mostrarUsuarioLogeado = function (usuario, tipo) {
     var url =
       "controlador/ruteador/RuteadorGral.php?accion=buscarUsuarioLogeado&Formulario=Cliente&tipo=" +
       tipo;
@@ -99,14 +99,14 @@ function compartirFunciones(app) {
       method: "POST",
       data: datosEnviar,
       dataType: "json",
-      success: function(data) {
-        $.each(data, function(i, usuario) {
+      success: function (data) {
+        $.each(data, function (i, usuario) {
           $("#tituloBienvenida" + tipo).html(
             "Bienvenido " + usuario.nombreUsuario
           );
         });
       },
-      error: function(a, b, e) {
+      error: function (a, b, e) {
         console.log(e);
       }
     });
@@ -124,27 +124,57 @@ function compartirFunciones(app) {
       method: "POST",
       data: datosEnviar,
       dataType: "json",
-      success: function(data) {
-          //console.log(data);
-        
-          //$('#idLista').val(index.MAX(`idListaTurno`));
-      
-        
+      success: function (data) {
+        $('#idLista').val(data);
       },
-      error: function(a, b, e) {
+      error: function (a, b, e) {
         console.log(e);
       }
     });
   };
+
+  app.guardarConfiguracionTurno = function (tipo) {
+    var hD = $('#horaDesdeParametro').val().split(":")[0];
+    var mD = $('#horaDesdeParametro').val().split(":")[1];
+    var hH = $('#horaHastaParametro').val().split(":")[0];
+    var mH = $('#horaHastaParametro').val().split(":")[1];
+    var idLista = $('#idLista').val();
+    $.each($('#idDia :selected'), function () {
+      var dia = $(this).val();
+      datos =  "idListaTurno="+ idLista + '&horaDesde='+ hD + '&minutoDesde=' + mD + '&horaHasta=' + hH + '&minutoHasta=' + mH + '&idDia=' + dia;
+      
+      var url =
+        "controlador/ruteador/RuteadorGral.php?accion=guardarConfiguracionTurno&Formulario=Peluquero&tipo=" +
+        tipo;  
+      console.log(datos);    
+      $.ajax({
+        url: url,
+        method: "POST",
+        data: datos,
+        dataType: "json",
+        success: function (data) {
+          alert(data);
+      },
+      error: function (a, b, e) {
+        console.log(e);
+      }
+      });
+
+    });
+  }
+
+
+
+
   //Se activan los oyentes para todos los eventos
-  app.oyentes = function(tipo) {
+  app.oyentes = function (tipo) {
     $("#datos" + tipo).hide();
     $("#turnos" + tipo).hide();
     //Oyente para cuando se hace click en el boton Agregar
-    $("#cerrarSesion" + tipo).on("click", function(event) {
+    $("#cerrarSesion" + tipo).on("click", function (event) {
       app.cerrarSesion();
     });
-    $("#misTurnos" + tipo).on("click", function(event) {
+    $("#misTurnos" + tipo).on("click", function (event) {
       $("#turnos" + tipo).show();
       $("#registroTurno" + tipo).hide();
       $("#datos" + tipo).hide();
@@ -152,7 +182,7 @@ function compartirFunciones(app) {
       $("#btnTurno").removeClass("active");
       $("#btnMisDatos").removeClass("active");
     });
-    $("#turno" + tipo).on("click", function(event) {
+    $("#turno" + tipo).on("click", function (event) {
       $("#datos" + tipo).hide();
       $("#registroTurno" + tipo).show();
       $("#turnos" + tipo).hide();
@@ -160,7 +190,7 @@ function compartirFunciones(app) {
       $("#btnTurno").addClass("active");
       $("#btnMisDatos").removeClass("active");
     });
-    $("#misDatos" + tipo).on("click", function(event) {
+    $("#misDatos" + tipo).on("click", function (event) {
       $("#registroTurno" + tipo).hide();
       $("#turnos" + tipo).hide();
       $("#datos" + tipo).show();
@@ -170,7 +200,7 @@ function compartirFunciones(app) {
     });
 
     //oyente de mis datos en menú superior
-    $("#misDatos" + tipo + "Nav").on("click", function() {
+    $("#misDatos" + tipo + "Nav").on("click", function () {
       $("#registroTurno" + tipo).hide();
       $("#turnos" + tipo).hide();
       $("#datos" + tipo).show();
@@ -181,15 +211,18 @@ function compartirFunciones(app) {
     //Oyentes Nico
 
     //Oyentes Emi
-    $('#crearListaTurnos').on('click', function(){
+    $('#crearListaTurnos').on('click', function () {
       $('#nombreListaTurno').val('');
-      $('#modalCrearListaTurnosNombre').modal({show: true});
+      $('#modalCrearListaTurnosNombre').modal({ show: true });
     });
-    $('#btnCrearListaTurnosNombre').on('click', function(){
-      $('#modalCrearListaTurnosNombre').modal("hide");      
-      $('#modalCrearListaTurnos').modal({show: true});
+    $('#btnCrearListaTurnosNombre').on('click', function () {
+      $('#modalCrearListaTurnosNombre').modal("hide");
+      $('#modalCrearListaTurnos').modal({ show: true });
       app.crearLista(tipo);
     });
-    
+    $('#btnGuardarTurnoCrearListaTurnos').on('click', function () {
+      app.guardarConfiguracionTurno(tipo);
+    });
+
   };
 }
