@@ -114,7 +114,28 @@ function compartirFunciones(app) {
   //Funciones Nico
 
   //Funciones Emi
-
+  app.crearLista = function (tipo) {
+    var url =
+      "controlador/ruteador/RuteadorGral.php?accion=crearLista&Formulario=Peluquero&tipo=" +
+      tipo;
+    var datosEnviar = $('#formCrearListaNombre').serialize();
+    $.ajax({
+      url: url,
+      method: "POST",
+      data: datosEnviar,
+      dataType: "json",
+      success: function(data) {
+          //console.log(data);
+        
+          //$('#idLista').val(index.MAX(`idListaTurno`));
+      
+        
+      },
+      error: function(a, b, e) {
+        console.log(e);
+      }
+    });
+  };
   //Se activan los oyentes para todos los eventos
   app.oyentes = function(tipo) {
     $("#datos" + tipo).hide();
@@ -160,5 +181,15 @@ function compartirFunciones(app) {
     //Oyentes Nico
 
     //Oyentes Emi
+    $('#crearListaTurnos').on('click', function(){
+      $('#nombreListaTurno').val('');
+      $('#modalCrearListaTurnosNombre').modal({show: true});
+    });
+    $('#btnCrearListaTurnosNombre').on('click', function(){
+      $('#modalCrearListaTurnosNombre').modal("hide");      
+      $('#modalCrearListaTurnos').modal({show: true});
+      app.crearLista(tipo);
+    });
+    
   };
 }

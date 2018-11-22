@@ -10,9 +10,5 @@ abstract class ControladorGeneral implements DbSentencias {
         $this->refControladorPersistencia = ControladorPersistencia::obtenerCP();
     }
 
-    public abstract function agregar($datos);
-    public abstract function modificar($datos);
-    public abstract function eliminar($datos);
-    public abstract function buscar($datos);
-    public abstract function listar($datos);
+    
 }

@@ -16,6 +16,10 @@ $(function() {
 
       //Se inicializan los oyentes para los eventos
       app.oyentes("Peluquero");
+      
+      $('#idDia').multiselect();
+
+     
     };
 
     app.init();

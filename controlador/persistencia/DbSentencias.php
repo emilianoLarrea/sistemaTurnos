@@ -6,8 +6,9 @@ interface DbSentencias {
 const BUSCAR_USUARIO = "SELECT * FROM `usuario` WHERE `mail` = ?  AND `pass` = ?";    
 const BUSCAR_PELUQUERO = "SELECT * FROM `usuario` WHERE `tipoUsuario` = 'Peluquero';";    
 const BUSCAR_USUARIO_LOGEADO = "SELECT `nombreUsuario` FROM `usuario` WHERE `mail` = ?";
-
-
+const CREAR_LISTA = "INSERT INTO `listaTurnoPeluquero`(`idListaTurno`, `nombreLista`, `fechaDesde`, `idUsuario`, `estado`) VALUES (?,?,?,?,0);";
+const BUSCAR_IDUSUARIO = "SELECT `id` FROM `usuario` WHERE `mail` = ?;";
+const BUSCAR_IDLISTA = "SELECT MAX(`idListaTurno`) FROM `listaTurnoPeluquero`";
 
 //Cliente
 const INSERTAR_CLIENTE = "INSERT INTO `usuario`(`id`, `nombreUsuario`, `apellido`,`mail`, `fechaNacimiento`,`tel`,`sexo`, `pass`, `dni`,   `tipoUsuario`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, 0, 'Cliente')";

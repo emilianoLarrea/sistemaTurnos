@@ -1,171 +1,258 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Peluquero - Peluquería DiLorenzo</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="js/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="js/bootstrap/css/bootstrap-theme.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="js/bootstrap/css/bootstrapValidator.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="js/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="css/sesionClientePeluquero.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Courgette"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-      crossorigin="anonymous"
-    />
-  </head>
 
-  <body>
-    <!-- Barra Superior -->
-    <nav class="navbar navbar-fixed-top" id="navBarPrincipal">
-      <div class="container">
-        <div class="navbar-header">
-          <button
-            type="button"
-            class="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#navbar"
-            aria-controls="navbar"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span> <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="navbar-brand courgette" id="inicio">
-            Peluquería DiLorenzo
-          </div>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <button class="btn btn-lg navbar-right" id="misDatosPeluqueroNav">
-            Mis Datos
-          </button>
-          <button class="btn btn-lg navbar-right" id="cerrarSesionPeluquero">
-            Cerrar Sesión
-          </button>
+<head>
+  <title>Peluquero - Peluquería DiLorenzo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+  <link href="js/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css" />
+  <link href="js/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+    type="text/css" />
+  <link href="css/sesionClientePeluquero.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous" />
+    <link rel="stylesheet" href="/js/multiSelect/dist/css/bootstrap-multiselect.css" type="text/css">
+</head>
+
+<body>
+  <!-- Barra Superior -->
+  <nav class="navbar navbar-fixed-top" id="navBarPrincipal">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span> <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand courgette" id="inicio">
+          Peluquería DiLorenzo
         </div>
       </div>
-    </nav>
-
-    <!-- Titulo -->
-    <div id="tituloPrincipal">
-      <div class="container">
-        <h1 class="montserrat">Peluquería DiLorenzo</h1>
-        <h4 class="montserrat" id="tituloBienvenidaPeluquero"></h4>
+      <div id="navbar" class="navbar-collapse collapse">
+        <button class="btn btn-lg navbar-right" id="misDatosPeluqueroNav">
+          Mis Datos
+        </button>
+        <button class="btn btn-lg navbar-right" id="cerrarSesionPeluquero">
+          Cerrar Sesión
+        </button>
       </div>
     </div>
-    <nav class="navbar sans" id="navBarTurnos">
-      <div class="container-fluid">
-        <ul class="nav navbar-nav" id="navBarTurnosAdentro">
-          <li class="active" id="btnTurno">
-            <a id="turnoPeluquero" href="#">Turno</a>
-          </li>
-          <li id="btnMisTurnos">
-            <a id="misTurnosPeluquero" href="#">Mis Turnos</a>
-          </li>
-          <li id="btnMisDatos">
-            <a id="misDatosPeluquero" href="#">Mis Datos</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  </nav>
 
-    <div
-      class="tab-pane"
-      id="registroTurnoPeluquero"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myModalLabel"
-      aria-hidden="true"
-    >
-      <!-- Calendario Selección De Turnos del Día -->
-      <div class="container sans contenedorCalendario">
-        <div class="row">
-          <div class="col-sm-6 calendario">
-            <div class="form-group">
-              <div class="input-group date" id="calendarioSeleccionPeluquero">
-                <input type="text" class="form-control" />
-                <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-              </div>
+  <!-- Titulo -->
+  <div id="tituloPrincipal">
+    <div class="container">
+      <h1 class="montserrat">Peluquería DiLorenzo</h1>
+      <h4 class="montserrat" id="tituloBienvenidaPeluquero"></h4>
+    </div>
+  </div>
+  <nav class="navbar sans" id="navBarTurnos">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav" id="navBarTurnosAdentro">
+        <li class="active" id="btnTurno">
+          <a id="turnoPeluquero" href="#">Turno</a>
+        </li>
+        <li id="btnMisTurnos">
+          <a id="misTurnosPeluquero" href="#">Configuración de Turnos</a>
+        </li>
+        <li id="btnMisDatos">
+          <a id="misDatosPeluquero" href="#">Mis Datos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Página para ver turnos del día-->
+
+  <div class="tab-pane" id="registroTurnoPeluquero" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <!-- Calendario Selección De Turnos del Día -->
+    <div class="container sans contenedorCalendario">
+      <div class="row">
+        <div class="col-sm-6 calendario">
+          <div class="form-group">
+            <div class="input-group date" id="calendarioSeleccionPeluquero">
+              <input type="text" class="form-control" />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
             </div>
           </div>
-          <button class="btn btn-lg sans" id="btnBuscarTurno">Buscar</button>
+        </div>
+        <button class="btn btn-lg sans" id="btnBuscarTurno">Buscar</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Página de Gestión de Listas de Turnos-->
+
+  <div class="tab-pane" id="turnosPeluquero" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <button class="btn btn-lg botonesPillos" id="crearListaTurnos">Crear Nueva Lista de Turnos</button>
+
+
+    <!-- Modal Crear Lista Nombre -->
+    <div class="modal fade" id="modalCrearListaTurnosNombre" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="formCrearListaNombre" class="form-horizontal" data-bv-message="Este valor No es válido"
+            data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+            data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" data-bv-submitbuttons="button[type=&quot;submit&quot;]"
+            data-bv-trigger="focus blur" data-bv-live="enabled">
+            <!-- Titulo Modal -->
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;
+              </button>
+              <h4 class="modal-title" id="tituloModal">Nueva Lista de Turnos:</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label class="col-lg-10">Nombre de la Lista:</label>
+                <div class="col-lg-10">
+                  <input type="text" placeholder="Nombre de la Lista" class="form-control" name="nombreLista" id="nombreListaTurno"
+                    data-bv-notempty="true" data-bv-notempty-message="Escribí el Nombre de la Lista" />
+                </div>
+              </div>
+
+            </div>
+            <!-- Botones Modal -->
+            <div class="modal-footer">
+              <button type="button" id="btnCrearListaTurnosNombre" class="btn botonesPillos">
+                Crear
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
-    <div
-      class="tab-pane"
-      id="turnosPeluquero"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myModalLabel"
-      aria-hidden="true"
-    >
-      <h1>Mis Turnos</h1>
-    </div>
-    <div
-      class="tab-pane"
-      id="datosPeluquero"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myModalLabel"
-      aria-hidden="true"
-    >
-      <h1>Mis Datos</h1>
+    <!-- Modal Crear Lista -->
+
+    <div class="modal fade" id="modalCrearListaTurnos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              &times;
+            </button>
+            <h4 class="modal-title" id="tituloModal">Nueva Lista de Turnos</h4>
+          </div>
+
+          <!-- Modal Body -->
+          <div class="modal-body">
+            <form class="form-horizontal" id="formCrearListaTurnos">
+              <div class="form-group form-group-sm">
+
+                <!-- left column -->
+                <div class="col-sm-6">
+                  
+                  <div class="form-group">
+                    <table class="table" id="tablaParametros">
+                      <thead>
+                        <tr>
+                          <th>Hora Desde</th>
+                          <th>Hora Hasta</th>
+                          <th>Dias</th>
+                          <th> <!-- EN ESTA COLUMNA VACÍA VA UNA CRUZ PARA ELIMINAR EL PARÁMETRO--> </th> 
+                        </tr>
+                      </thead>
+                      <tbody id="cuerpoTablaParametros">
+                      </tbody>
+                    </table><br>
+                  </div>
+                </div>
+                <!-- right column -->
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="horaDesde" class="col-lg-10">Hora Desde:</label>
+                    <div class="col-sm-12">
+                      <input type="time" required class="form-control" id="horaDesdeParametro" name="horaDesde" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="horaHasta" class="col-lg-10">Hora Hasta:</label>
+                      <div class="col-sm-12">
+                        <input type="time" required class="form-control" id="horaHastaParametro" name="horaHasta"/>
+                      </div>
+                    </div>
+                  <div class="form-group">
+                    <label for="dias" class="col-lg-10">Día/s del Turno</label>
+                    <div class="col-sm-12">
+                      <select class="form-group" id="idDia" multiple="multiple" name="dias" placeholder="asdfadf">
+                        
+                        <option value="0">Lunes</option>
+                        <option value="1">Martes</option>
+                        <option value="2">Miercoles</option>
+                        <option value="3">Jueves</option>
+                        <option value="4">Viernes</option>
+                        <option value="5">Sabado</option>
+                        <option value="6">Domingo</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                        <input type="text" required class="form-control" id="idLista" name="idLista"/>
+                      </div>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+                  <!-- Modal Footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >
+                      Cerrar
+                    </button>
+                    <button type="button" class="btn botonesPillos" id="btnGuardarTurnoCrearListaTurnos">
+                        Guardar Configuración
+                      </button>
+                    <button type="button" class="btn botonesPillos" id="btnFinalizarCrearListaTurnos">
+                      Finalizar
+                    </button>
+                  </div>
+                  <!-- End Modal Footer -->
+            </form>
+          </div>
+          <!-- End modal body div -->
+        </div>
+        <!-- End modal content div -->
+      </div>
+      <!-- End modal dialog div -->
     </div>
 
-    <!-- Librerias -->
-    <script src="js/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="js/jquery/md5.js" type="text/javascript"></script>
-    <script
-      src="js/bower_components/moment/min/moment.min.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="js/bootstrap/js/bootstrap.min.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="js/bootstrap/js/bootstrapValidator.min.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="js/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"
-      type="text/javascript"
-    ></script>
-    <script src="js/funcionesGeneral.js" type="text/javascript"></script>
-    <script src="js/funcionesPeluquero.js" type="text/javascript"></script>
-  </body>
+
+
+
+
+  </div>
+
+  <!-- Página Mis Datos-->
+
+  <div class="tab-pane" id="datosPeluquero" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <h1>Mis Datos</h1>
+  </div>
+
+  <!-- Librerias -->
+  <script src="js/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+  <script src="js/jquery/md5.js" type="text/javascript"></script>
+  <script src="js/bower_components/moment/min/moment.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap/js/bootstrapValidator.min.js" type="text/javascript"></script>
+  <script src="js/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+  <script src="js/funcionesGeneral.js" type="text/javascript"></script>
+  <script src="js/funcionesPeluquero.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/multiSelect/dist/js/bootstrap-multiselect.js"></script>
+</body>
+
 </html>

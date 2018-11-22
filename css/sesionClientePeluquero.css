@@ -20,7 +20,9 @@
 #misDatosPeluqueroNav,
 #cerrarSesionCliente,
 #cerrarSesionPeluquero,
-#btnBuscarTurno {
+#btnBuscarTurno,
+.botonesPillos 
+{
   background-color: #b17b17;
   color: rgb(233, 233, 233);
   padding: 6px;
@@ -28,6 +30,16 @@
   margin-top: 5px;
   margin-bottom: 10px;
 }
+#misDatosClienteNav:hover,
+  #misDatosPeluqueroNav:hover,
+  #cerrarSesionCliente:hover,
+  #cerrarSesionPeluquero:hover,
+  #btnBuscarTurno:hover,
+  .botonesPillos:hover{
+    color: rgb(233, 233, 233);
+    background-color: #976912;
+  }
+
 #tituloPrincipal {
   margin-top: 6%;
   margin-bottom: 3%;
@@ -75,7 +87,8 @@
   #misDatosClienteNav,
   #misDatosPeluqueroNav,
   #cerrarSesionCliente,
-  #cerrarSesionPeluquero {
+  #cerrarSesionPeluquero,
+  .botonesPillos {
     background: white;
     color: #976912;
     font-size: 120%;
