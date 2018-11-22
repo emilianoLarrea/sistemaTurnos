@@ -8,7 +8,6 @@ class ControladorPeluquero extends ControladorGeneral{
     function __construct($datos) {
         parent::__construct();
     }
-
     
     public function crearLista($datos) {
         try {

@@ -139,28 +139,33 @@ function compartirFunciones(app) {
     var hH = $('#horaHastaParametro').val().split(":")[0];
     var mH = $('#horaHastaParametro').val().split(":")[1];
     var idLista = $('#idLista').val();
-    $.each($('#idDia :selected'), function () {
-      var dia = $(this).val();
-      datos =  "idListaTurno="+ idLista + '&horaDesde='+ hD + '&minutoDesde=' + mD + '&horaHasta=' + hH + '&minutoHasta=' + mH + '&idDia=' + dia;
-      
-      var url =
-        "controlador/ruteador/RuteadorGral.php?accion=guardarConfiguracionTurno&Formulario=Peluquero&tipo=" +
-        tipo;  
-      console.log(datos);    
-      $.ajax({
-        url: url,
-        method: "POST",
-        data: datos,
-        dataType: "json",
-        success: function (data) {
-          alert(data);
-      },
-      error: function (a, b, e) {
-        console.log(e);
-      }
+    if((hD<hH)||((hD==hH)&&(mD<mH))){
+      $.each($('#idDia :selected'), function () {
+        var dia = $(this).val();
+        datos =  "idListaTurno="+ idLista + '&horaDesde='+ hD + '&minutoDesde=' + mD + '&horaHasta=' + hH + '&minutoHasta=' + mH + '&idDia=' + dia;
+        
+        var url =
+          "controlador/ruteador/RuteadorGral.php?accion=guardarConfiguracionTurno&Formulario=Peluquero&tipo=" +
+          tipo;  
+        console.log(datos);    
+        $.ajax({
+          url: url,
+          method: "POST",
+          data: datos,
+          dataType: "json",
+          success: function (data) {
+            alert(data);
+        },
+        error: function (a, b, e) {
+          console.log(e);
+        }
+        });
+  
       });
-
-    });
+    }else{
+      alert("Hora Desde no puede ser mayor que Hora Hasta.");
+    }
+    
   }
 
 
