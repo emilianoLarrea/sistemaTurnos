@@ -12,8 +12,8 @@ $(function() {
       app.buscarUsuarioLogeado("Peluquero");
       //Encender calendario
       app.calendario("Peluquero");
-      //Se cargan los datos de todos los alumnos
-
+      //Se llama la funcion para comprobar tiempo de inactividad
+      app.cerrarSesionInactiva("Peluquero");
       //Se inicializan los oyentes para los eventos
       app.oyentes("Peluquero");
     };

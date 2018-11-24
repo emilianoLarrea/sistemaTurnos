@@ -112,6 +112,26 @@ function compartirFunciones(app) {
     });
   };
   //Funciones Nico
+  app.cerrarSesionInactiva = function(tipo) {
+    $(this)
+      .delay(1800000)
+      .queue(function() {
+        var url =
+          "controlador/ruteador/RuteadorBienvenida.php?getTiempo=true&tipo=" +
+          tipo;
+        $.ajax({
+          url: url,
+          dataType: "json",
+          success: function(data) {
+            if (data == true) {
+              app.cerrarSesion();
+            } else {
+              app.cerrarSesionInactiva(tipo);
+            }
+          }
+        });
+      });
+  };
 
   //Funciones Emi
 

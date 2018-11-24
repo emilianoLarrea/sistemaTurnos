@@ -7,12 +7,14 @@ class ControladorSesion implements DbSentencias {
     private $usuario;
     private $tipo;
     private $refControladorPersistencia;
+    private $tiempo;
 
     public function __construct() {
         session_start();
         $this->usuario = 'usuario';
         $this->tipo = 'tipo';
         $this->refControladorPersistencia = ControladorPersistencia::obtenerCP();
+        $this->tiempo;
     }
 
     //Se inicia una sesion de usuario
@@ -25,6 +27,7 @@ class ControladorSesion implements DbSentencias {
         
         //Si existe
         if ($registro) {
+            $_SESSION[$this->tiempo] = time();
             $_SESSION[$this->usuario]=$datos['u'];
             $_SESSION[$this->tipo] = $registro['tipoUsuario'];
              if ($registro['tipoUsuario'] == "Peluquero"){
@@ -59,11 +62,15 @@ class ControladorSesion implements DbSentencias {
             return true;
         }
     }
-    
+    public function setTiempo(){
+        $_SESSION[$this->tiempo] = time(); 
+    }
     public function getUsuario() {
         return $_SESSION[$this->usuario];
     }
-
+    public function getTiempo() {
+        return $_SESSION[$this->tiempo];
+    }
     public function getRefControladorPersistencia() {
         return $this->refControladorPersistencia;
     }

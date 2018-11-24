@@ -14,7 +14,8 @@ $(function() {
       app.buscarUsuarioLogeado("Cliente");
       //Cargar los peluqueros disponibles
       app.buscar("Peluquero");
-
+      //Se llama la funcion para comprobar tiempo de inactividad
+      app.cerrarSesionInactiva("Cliente");
       //Se inicializan los oyentes para los eventos
       app.oyentes("Cliente");
     };

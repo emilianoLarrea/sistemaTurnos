@@ -3,7 +3,7 @@ require_once '../controladoresEspecificos/ControladorSesion.php';
 
 $sesion = new ControladorSesion();
 if ($sesion->verificar($_GET['tipo'])) {
-    
+    $sesion->setTiempo();
     //Si se envio un formulario
     if (isset($_GET['Formulario'])) {
         $datosFormulario = $_POST; 
